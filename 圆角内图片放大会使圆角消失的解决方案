@@ -1,0 +1,27 @@
+在做一个轮播框的时候需要用到鼠标移入图片放大，并且还要有边框圆角的需求
+
+一开始直接给父级overflow:hidden和圆角，子级图片transition:0.7s 。 hover后scale(1.05)。但是发现放大时圆角会消失，放大结束后圆角才会回来。
+
+解决方法是给父级加上transform:rotate(0deg)。原因不知，算是一个偏方了。示例代码如下。
+
+[css] view plain copy
+.pic_content .img3{  
+    width: 95px;  
+    height: 79px;  
+    position: absolute;  
+    overflow: hidden;  
+    top: 88px;  
+    left: 130px;  
+    transform: rotate(0deg);  
+    border-radius: 0px 0px 5px 0px;  
+}  
+.pic_content .img3 img{  
+    width: 123px;  
+    height: 79px;  
+    transition: 0.7s;  
+}  
+.pic_content .img3 img:hover{  
+    transform:scale(1.05)  
+}  
+
+
