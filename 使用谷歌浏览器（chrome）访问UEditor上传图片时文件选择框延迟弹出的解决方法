@@ -1,0 +1,14 @@
+在谷歌浏览器里，使用Ueditor时有一个问题，就是在上传图片时，点击按钮弹出文件选择框时，大约需要8秒才能弹出 
+
+这是因为在谷歌浏览器中上传图片input的acpect 的值取到了*
+
+
+解决方法： 
+1、单张图片：修改ueditor.all.js（ueditor.all.min.js）第24429行左右，将accept的值从image/*改成 
+image/jpeg,image/png,image/jpg,image/gif,image/bmp
+
+2、多张图片：修改dialogs/image/image.js的第370行左右，将mimeTypes的值从image/*改成 
+image/jpeg,image/png,image/jpg,image/gif,image/bmp
+
+也可以根据限制需要添加或删除允许的格式，按照img/xxx,img/xxx的格式就行
+修改好后到页面上看，如果accept的值变成了image/jpeg,image/png,image/jpg,image/gif,image/bmp就说明成功了
