@@ -1,0 +1,20 @@
+function checkLength(){
+    	var len=native2ascii($("#remarks").val());
+    	len=Math.ceil(len/2) ; //除2并向上取整		
+    	$(".word-num").text(len);
+    }
+
+ function native2ascii (value){
+    	var nativecode = value.split (""); //将每个字符分隔开
+        var len = 0;
+        for ( var i = 0; i < nativecode.length; i++){ 
+            var code = Number (nativecode[i].charCodeAt (0)); //判断每个字符的Unicode编码
+            if (code > 127){  //大于127的编码则算2个长度，
+                len += 2;
+            }
+            else{
+                len++;  
+            }
+        }
+        return len;
+    }
