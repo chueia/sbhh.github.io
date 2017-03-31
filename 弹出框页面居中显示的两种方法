@@ -1,0 +1,19 @@
+第一种
+[css] view plain copy
+position:fixed;  
+top:0;  
+right:0;  
+left:0;  
+bottom:0;  
+margin:auto;   
+这种方法在元素的宽高不固定时会全屏拉伸元素，在高度不固定靠子元素撑开自适应的情况下不适用。但是在宽高固定的情况下可以用，没有兼容性问题。
+
+第二种
+[css] view plain copy
+position:fixed;  
+top:50%;  
+left:50%;  
+transform:translateX(-50%) translateY(-50%);  
+用top:50% left:50%定位后元素的左上角会处于页面中间。
+
+transform:translateX(-50%) translateY(-50%)是CSS3的新写法，让元素相对于他自身的宽高反向移动。配合上面的代码就能实现居中定位，而且适用于不确定宽高的元素，但是在低版本IE不兼容。
