@@ -1,0 +1,11 @@
+select{
+	  /*清除select的默认样式*/
+	appearance:none;
+    -moz-appearance:none;
+    -webkit-appearance:none;
+     /*添加自定义箭头*/
+    background:url(./../img/select-row.png)no-repeat right 10px center ;
+    padding-right:10px;
+}
+/*清除ie的默认选择框样式清除，隐藏下拉箭头*/
+select::-ms-expand { display: none; }
